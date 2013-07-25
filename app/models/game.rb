@@ -7,7 +7,7 @@ class Game < ActiveRecord::Base
   	has_many :sessions
   	has_many :players, through: :sessions
 
-  	# ежедневно в 20-30
+  	# раз в день (загрузка игр после загрузки плееров в 20-30)
   	def self.load_from_url (i, z)
   		while i != z
   			url_day = Date.today.prev_day(i)
@@ -68,7 +68,7 @@ class Game < ActiveRecord::Base
 		end
 	end 
 
-	# ежедневно
+	# раз в день, в полночь 
 	def self.player_rating (i, z)
 
 		while i < z # 505-767

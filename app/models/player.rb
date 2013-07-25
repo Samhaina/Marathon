@@ -27,7 +27,7 @@ class Player < ActiveRecord::Base
 	end 
 
 
-	# метод для вьюхи (Серии занятых мест)
+	# метод для вьюхи (серии занятых мест)
 	def array_of_places (id)
 		player = Player.find_by_id(id)
 		array_of_places = []
@@ -67,7 +67,7 @@ class Player < ActiveRecord::Base
 
 	end
 
-	# метод для вьюхи и модели (среднее)
+	# метод для модели (раз в день)
 	def self.average_count
 		player = Player.find(:all)
 		player.each do |player|
@@ -80,7 +80,7 @@ class Player < ActiveRecord::Base
 		end
 	end
 
-	# метод для вьюхи и для модели, раз в день, лучшее среднее
+	# метод для модели (раз в день)
 	def self.best_average_count
 		player = Player.find(:all)
 		player.each do |player|

@@ -1,4 +1,4 @@
-p Игры за предыдущий день добавляются в 20-30 текущего дня
+p Игры добавляются раз в сутки, в 20-30
 table
     tr
         th Ник
@@ -12,9 +12,9 @@ table
             - if player.array_of_places(player.id).count >= 20
                 tr
                     td = player.name
-                    td = player.rating.round(2)
+                    td = player.rating.round(0)
                     td = player.array_of_places(player.id).count
-                    td = player.average.round(2)
+                    td = player.average.round(3)
                     td = player.best_average.round(2)
                     td = player.rang(player.id)
                     td = player.array_of_places(player.id).join(" ")
@@ -30,9 +30,9 @@ table
             - if player.array_of_places(player.id).count < 20 && player.array_of_places(player.id).count > 0 
                 tr
                     td = player.name
-                    td = player.rating.round(2)
+                    td = player.rating.round(0)
                     td = player.array_of_places(player.id).count
-                    td = player.average.round(2)
+                    td = player.average.round(3)
                     td = player.best_average.round(2)
                     td = player.rang(player.id)
                     td = player.array_of_places(player.id).join(" ")
